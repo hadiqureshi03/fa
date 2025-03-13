@@ -1,4 +1,6 @@
 body {
+  background-image: linear-gradient(#213555, #3E5879 73%);
+  height: 100vh;
   margin: 40px 75px 0 75px;
   font-family: "Inter", sans-serif;
   padding: 0px;
@@ -6,8 +8,8 @@ body {
 }
 
 .logo {
-  /* filter: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(18%)
-    hue-rotate(145deg) brightness(104%) contrast(104%); */
+  filter: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(18%)
+    hue-rotate(145deg) brightness(104%) contrast(104%);
 }
 
 nav {
@@ -44,6 +46,36 @@ li > a {
   text-transform: uppercase;
 }
 
+nav li > a {
+  color: #ececec;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.button {
+  border: none;
+  border-radius: 50px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  width: auto;
+}
+
+.cta-button {
+  background-color: #d8c4b6;
+  color: #213555 !important;
+  width: 100px;
+  height: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center
+}
+
+.cta-button:hover {
+  background-color: #777;
+}
+
 .cta {
   background-color: #d8c4b6;
   padding: 15px 40px;
@@ -57,3 +89,17 @@ li > a {
   font-weight: 600;
   font-size: 16px;
 }
+
+main {
+  color: #ececec;
+}
+
+main h1 {
+  text-transform: uppercase;
+}
+
+main p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+ 
