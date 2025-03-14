@@ -1,105 +1,220 @@
 body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
   background-image: linear-gradient(#213555, #3E5879 73%);
   height: 100vh;
-  margin: 40px 75px 0 75px;
-  font-family: "Inter", sans-serif;
-  padding: 0px;
-  box-sizing: border-box;
 }
 
-.logo {
+/* a {
+  color: #000;
+} */
+
+.logo img {
   filter: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(18%)
     hue-rotate(145deg) brightness(104%) contrast(104%);
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 81px;
-}
-
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/********** Header **********/ 
+.header {
   position: fixed;
-  width: auto;
-  top: 20px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 0 75px;
+  width: 100%;
+  z-index: 3;
+  margin-top: 20px;
 }
 
-ul {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
+.header ul {
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: #213555;
+  float:right;
+  width: 200px;
 }
 
-li {
-  padding: 0 25px;
-}
-
-li > a {
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  color: #fff;
   text-decoration: none;
+}
+
+.header li a:hover, .header .menu-btn:hover {
+  color: #d8c4b6;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* MENU */
+
+.header .menu {
   text-transform: uppercase;
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
 }
 
-nav li > a {
-  color: #ececec;
-  font-weight: 600;
-  font-size: 16px;
-}
+/* MENU ICON */
 
-.button {
-  border: none;
-  border-radius: 50px;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+.header .menu-icon {
+  cursor: pointer;
   display: inline-block;
-  font-size: 1em;
-  padding: 1em 2em;
-  width: auto;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
 }
 
-.cta-button {
+.header .menu-icon .nav-icon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .nav-icon:before,
+.header .menu-icon .nav-icon:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .nav-icon:before {
+  top: 5px;
+}
+
+.header .menu-icon .nav-icon:after {
+  top: -5px;
+}
+
+/* MENU BTN */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .nav-icon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .nav-icon:after {
+  top: 0;
+}
+
+/* MENU CTA BTN */
+.header .cta {
   background-color: #d8c4b6;
-  color: #213555 !important;
-  width: 100px;
-  height: 15px;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center
-}
-
-.cta-button:hover {
-  background-color: #777;
-}
-
-.cta {
-  background-color: #d8c4b6;
-  padding: 15px 40px;
   border-radius: 50px;
+  margin: 0 10px 10px 10px;
 }
 
-.cta > a {
+.header .cta > a {
   text-decoration: none;
-  text-transform: uppercase;
   color: #213555;
   font-weight: 600;
   font-size: 16px;
+  text-align: center;
+
 }
 
+.header .cta:hover {
+  background-color:#fff;
+}
+
+.header .cta > a:hover {
+  color: #213555;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  .header ul {
+    background: transparent;
+    width: unset;
+  }
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 12px 40px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/********** MAIN **********/
 main {
-  color: #ececec;
+  position: fixed;
+  margin-top: 100px;
+  color: #fff;
 }
 
 main h1 {
+  
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+main .box {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+main .box > p {
+  display: flex;
+  flex-direction: column;
   text-transform: uppercase;
 }
 
-main p {
-  font-size: 1.2em;
-  line-height: 1.6em;
+main .box > p span {
+  font-size: 25px;
+  line-height: 2;
 }
- 
+
+main .box button {
+  width: 100%;
+	height: 56px;
+	padding: 0 24px;
+	color: white;
+	outline: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  font-size: 20px;
+  border: 2px solid #fff;
+  border-radius: 300px;
+}
