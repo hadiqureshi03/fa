@@ -58,12 +58,11 @@ nav ul li a:hover{
     color: #d8c4b6;
 }
 
-/* MENU CTA BTN - Now styling the "Ansøg" link to look like a button */
 nav ul li:last-child a {
     display: inline-block;
     background-color: #d8c4b6;
     border-radius: 50px;
-    padding: 8px 40px;
+    padding: 2px 36px;
     text-align: center;
     line-height: 2.1;
     text-transform: uppercase;
@@ -71,7 +70,11 @@ nav ul li:last-child a {
     font-weight: 600;
     border: none;
     cursor: pointer;
-}  
+}
+
+nav ul li:last-child a:hover {
+    color: #213555;
+}
 
 /* Hidden checkbox for menu toggle */
 #menu-toggle {
