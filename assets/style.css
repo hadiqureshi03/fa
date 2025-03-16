@@ -58,18 +58,18 @@ nav ul li a:hover{
     color: #d8c4b6;
 }
 
-/* MENU CTA BTN */
-nav ul li a button {
+/* MENU CTA BTN - Now styling the "Ansøg" link to look like a button */
+nav ul li:last-child a {
+    display: inline-block;
     background-color: #d8c4b6;
     border-radius: 50px;
-    width: 150px;
-    height: 36px;
+    padding: 8px 40px;
     text-align: center;
     line-height: 2.1;
     text-transform: uppercase;
     font-size: 16px;
-    font-weight: 600;;
-    border:none;
+    font-weight: 600;
+    border: none;
     cursor: pointer;
 }  
 
@@ -88,14 +88,14 @@ nav ul li a button {
     position: relative;
 }
 
-/* Improved burger lines for better animation */
-.burger div {
+.burger span {
     width: 100%;
     height: 3px;
     background-color: #fff;
     position: absolute;
     left: 0;
     transition: all 0.3s ease;
+    display: block;
 }
 
 .line1 {
@@ -127,7 +127,7 @@ nav ul li a button {
 
 .hero.homepage {
     height: 100vh;
-    background-image: url('./img/homepage.jpg');;
+    background-image: url('./img/homepage-background.jpg');;
 }
 
 .hero.delays {
@@ -135,11 +135,15 @@ nav ul li a button {
 }
 
 .hero.apply {
-    background-image: url('./img/apply.png');
+    background-image: url('./img/apply-background.png');
+}
+
+.hero.about-us {
+    background-image: url('./img/about-us-background.jpg');
 }
 
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 2rem;
     border-radius: 5px;
     max-width: 600px;
@@ -156,24 +160,27 @@ nav ul li a button {
     margin-bottom: 2rem;
 }
 
-.cta-button button {
-	height: 56px;
-	padding: 0 24px;
-	color: white;
-	outline: none;
-	background: none;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+.cta-button {
+    display: inline-block;
+    height: 56px;
+    padding: 2px 24px;
+    color: white;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 20px;
     border: 2px solid #fff;
     border-radius: 50px;
+    text-decoration: none;
+    line-height: 52px;
 }
 
-.cta-button:hover button{
+.cta-button:hover {
     color: #d8c4b6;
+    border: 2px solid #d8c4b6;
 }
 
 /* Content section */
@@ -314,6 +321,10 @@ nav ul li a button {
     background-color: white;
 }
 
+.content-section.about-us p {
+    line-height: 3rem;
+}
+
 /* Medium screen responsive styles */
 @media screen and (max-width: 1023px) {
     .content-section.delays .card {
@@ -351,8 +362,6 @@ nav ul li a button {
     #menu-toggle:checked ~ nav {
         right: 0;
     }
-    
-    /* Properly animate burger to X when menu is open */
     #menu-toggle:checked ~ .burger .line1 {
         transform: rotate(45deg);
         top: 10px; /* Move to center to form the X */
